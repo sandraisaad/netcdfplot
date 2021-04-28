@@ -6,7 +6,7 @@ sandraisaad@gmail.com
 
 ---
 
-R/netcdfplot √ um conjunto de ferramentas para plotar mapas dos dados em Netcdf e realizar an√°lises espaciai.
+R/netcdfplot eh um conjunto de ferramentas para plotar mapas dos dados em Netcdf e realizar analises espaciai.
 
 ---
 
