@@ -25,3 +25,10 @@ temperatura_tempo1 <- temperatura[,,1];
 plota_mapa(temperatura_tempo1, vlon = longitudes, vlat = latitudes, mapa_brasil = T, mapa_amsul = T, paleta = "YlGnBu"); 
 
 media_area(temperatura_tempo1, mapa = "Brasil", vlat = latitudes, vlon = longitudes, fun = "max")
+
+### Instalacao no R
+
+library(devtools)
+
+install_bitbucket("sandraisaysaad/netcdfplot")
+
