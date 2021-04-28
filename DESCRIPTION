@@ -1,0 +1,21 @@
+Package: netcdfplot
+Type: Package
+Title: netcdfplot
+Version: 1.0.0
+Author: Sandra I. Saad
+Maintainer: Sandra I. Saad <sandraisaad@gmail.com>
+Description: Ferramentas para plotar mapas dos dados em Netcdf e realizar análises espaciais
+Examples: 
+e1: gfs <- carrega_modelo("/data/gfs_2019092500mod.nc"); 
+e2: longitudes <- carrega_longitude(gfs); 
+e3: latitudes <- carrega_latitude(gfs); 
+e4: temperatura <- carrega_variavel(gfs, "tmp2m"); 
+e5: temperatura_tempo1 <- temperatura[,,1]; 
+e6: plota_mapa(temperatura_tempo1, vlon = longitudes, vlat = latitudes, mapa_brasil = T, mapa_amsul = T, paleta = "YlGnBu"); 
+e7: media_area(temperatura_tempo1, mapa = "Brasil", vlat = latitudes, vlon = longitudes, fun = "max")
+License: GPL-3
+Encoding: UTF-8
+LazyData: true
+RoxygenNote: 7.1.1
+Depends: 
+    R (>= 2.10)
