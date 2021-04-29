@@ -13,6 +13,12 @@ e4: temperatura <- carrega_variavel(gfs, "tmp2m");
 e5: temperatura_tempo1 <- temperatura[,,1]; 
 e6: plota_mapa(temperatura_tempo1, vlon = longitudes, vlat = latitudes, mapa_brasil = T, mapa_amsul = T, paleta = "YlGnBu"); 
 e7: media_area(temperatura_tempo1, mapa = "Brasil", vlat = latitudes, vlon = longitudes, fun = "max")
+e8: date <- carrega_tempo(gfsmodel)
+e9: coordx <- lon2x(longitudes,-46.5)
+e10: coordy <- lat2y(latitudes,-23.5)
+e11: temperatura_ponto <- temperatura[x = coordx, y = coordy, ]
+e12: df_temperatura_ponto<-data.frame(date, temperatura_ponto)
+e13: plot(df_temperatura_ponto)
 License: GPL-3
 Encoding: UTF-8
 LazyData: true
