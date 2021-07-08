@@ -81,7 +81,9 @@ matrix2raster <- function(matrix,vlat,vlon){
     ymn=min(vlat), ymx=max(vlat),
     crs=sp::CRS("+proj=longlat +datum=WGS84 +no_defs +ellps=WGS84 +towgs84=0,0,0")
   )
-  r <<- raster::flip(r, direction = 'y') # sem isso, o mapa fica invertido
+  if (sort(latitudes)[1]==latitudes[1]) {
+    r <<- raster::flip(r, direction = 'y') # sem isso, o mapa fica invertido
+  }
   return(r)
 }
 
