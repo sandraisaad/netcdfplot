@@ -5,6 +5,7 @@ Version: 1.0.0
 Author: Sandra I. Saad
 Maintainer: Sandra I. Saad <sandraisaad@gmail.com>
 Description: Ferramentas para plotar mapas dos dados em Netcdf e realizar análises espaciais
+Imports: ncdf.tools, sp, raster, ncdf4, ggplot2,  rgdal
 Examples: 
 e1: gfs <- carrega_modelo("/data/gfs_2019092500mod.nc"); 
 e2: longitudes <- carrega_longitude(gfs); 
