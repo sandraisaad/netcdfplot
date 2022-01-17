@@ -29,7 +29,7 @@ carrega_modelo <- function(arquivo){
 #'           longitudes <- carrega_longitude(gfs)
 carrega_longitude <- function(modelo,nome_longitude="longitude"){
   lon <- ncdf4::ncvar_get(modelo,nome_longitude)
-  lon[lon>180]<-lon-360  # Converte de 180 a 360 em -180 a 0
+  lon[lon>180]<-lon[lon>180]-360  # Converte de 180 a 360 em -180 a 0
   return(lon)
 }
 
