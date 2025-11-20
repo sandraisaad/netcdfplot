@@ -18,13 +18,14 @@
 #' @param intervalos Um vetor com os intervalo de dados a ser considerado. Vale se legenda_intervalos=T
 #' @param interpolate Se F, mostra pixelado e não interpolado
 #' @param legenda_intervalos Se T, mostra a legenda em intervalos
+#' @param contorno Se T, mostra os contornos do plot
 #'
 #' @return
 #' @export
 #'
 #' @examples
 #'
-#' plota_mapa(prec,titulo = expression(paste("Precipitation (mm yr"^"-1",")")),legenda="Precipitação (mm)", vlon=longitudes,vlat=latitudes,loni=-39,lonf=-36,lati=-7.78,latf=-5, mapa = "PPA", mapa_brasil = T,mapa_amsul = T, paleta_rev = F, paleta = "YlGnBu", legenda_intervalos = F)
+#' plota_mapa(prec,titulo = expression(paste("Precipitation (mm yr"^"-1",")")),legenda="Precipitação (mm)", vlon=longitudes,vlat=latitudes,loni=-39,lonf=-36,lati=-7.78,latf=-5, mapa = "PPA", mapa_brasil = T,mapa_amsul = T, paleta_rev = F, paleta = "YlGnBu", legenda_intervalos = F,contorno = F)
 #'
 #' plota_mapa(temperatura,vlon=longitudes,vlat=latitudes)
 #'
