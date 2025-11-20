@@ -29,7 +29,7 @@
 #' plota_mapa(temperatura,vlon=longitudes,vlat=latitudes)
 #'
 plota_mapa <- function(array_var2d,titulo="",legenda="",vlon,vlat,loni=NA,lonf=NA,lati=NA,latf=NA,mapa=NA,paleta="RdBu",paleta_rev=F,
-                       mapa_brasil=F,mapa_amsul=F,mapa_mundo=F,intervalos=NA, interpolate=T,legenda_intervalos=F){
+                       mapa_brasil=F,mapa_amsul=F,mapa_mundo=F,intervalos=NA, interpolate=T,legenda_intervalos=F,contorno=F){
 
   if ( is.na(lati) | is.na(latf) | is.na(loni) | is.na(lonf) ){
     xi <- 1
@@ -57,11 +57,13 @@ plota_mapa <- function(array_var2d,titulo="",legenda="",vlon,vlat,loni=NA,lonf=N
   }
 
   plt <- ggplot2::ggplot(df_space, ggplot2::aes(lon,lat)) + ggplot2::geom_raster(ggplot2::aes(fill = v_var2d),interpolate = interpolate,low=colours[1],high=colours[10]) +  # Plota o mapa
-    #geom_contour(ggplot2::aes(z = temperatura), col ="Black") +                    # Acrecenta a saida em contorno
     ggplot2::ggtitle(titulo)         +          # Acrescenta o titulo
     ggplot2::theme(text = ggplot2::element_text(size = 18), axis.title = ggplot2::element_blank())
 
-
+  if (isTRUE(contorno)) {
+    plt <- plt + ggplot2::geom_contour(ggplot2::aes(z = v_var2d), col ="Black") # Acrecenta a saida em contorno
+  }
+  
   if(isTRUE(legenda_intervalos)){
     plt <- plt +  ggplot2::guides(fill=ggplot2::guide_legend(title=legenda))
   } else {
