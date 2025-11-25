@@ -1,7 +1,7 @@
 Package: netcdfplot
 Type: Package
 Title: netcdfplot
-Version: 1.1.1
+Version: 1.2.1
 Author: Sandra I. Saad
 Maintainer: Sandra I. Saad <sandraisaad@gmail.com>
 Description: Ferramentas para plotar mapas dos dados em Netcdf e realizar analises espaciais
@@ -19,6 +19,11 @@ e10: coordy <- lat2y(latitudes,-23.5)
 e11: temperatura_ponto <- temperatura[x = coordx, y = coordy, ]
 e12: df_temperatura_ponto<-data.frame(date, temperatura_ponto)
 e13: plot(df_temperatura_ponto)
+e14: u10m <- carrega_variavel(gfs, "ugrd10m");
+e15: v10m <- carrega_variavel(gfs, "vgrd10m");
+e16: u10m_t1 <- u10m[,,1];
+e17: v10m_t1 <- v10m[,,1];
+e18: plota_mapa_vento(u10m_t1,v10m_t1,vlon = longitudes, vlat = latitudes, mapa_brasil = T, mapa_amsul = T)
 License: GPL-3
 Encoding: UTF-8
 LazyData: true
