@@ -17,9 +17,6 @@ salva_figura(plt, file_name, width = 2500, height = 2000, salva_svg = F)
 
 \item{salva_svg}{Se T salva em svg também}
 }
-\value{
-
-}
 \description{
 Plota na tela, salva em jpg e em svg (se escolhido)
 }
