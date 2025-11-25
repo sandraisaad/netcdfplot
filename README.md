@@ -61,7 +61,9 @@ plota_mapa_vento(u10m_t1,v10m_t1,vlon = longitudes, vlat = latitudes, mapa_brasi
 
 ### Instalacao no R
 
-library(devtools)
+library(devtools) #ou:
+
+library(remotes)
 
 install_bitbucket("sandraisaysaad/netcdfplot")
 
