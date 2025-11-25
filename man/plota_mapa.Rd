@@ -22,7 +22,8 @@ plota_mapa(
   mapa_mundo = F,
   intervalos = NA,
   interpolate = T,
-  legenda_intervalos = F
+  legenda_intervalos = F,
+  contorno = F
 )
 }
 \arguments{
@@ -61,16 +62,15 @@ plota_mapa(
 \item{interpolate}{Se F, mostra pixelado e não interpolado}
 
 \item{legenda_intervalos}{Se T, mostra a legenda em intervalos}
-}
-\value{
 
+\item{contorno}{Se T, mostra os contornos do plot}
 }
 \description{
 Plota um mapa
 }
 \examples{
 
-plota_mapa(prec,titulo = expression(paste("Precipitation (mm yr"^"-1",")")),legenda="Precipitação (mm)", vlon=longitudes,vlat=latitudes,loni=-39,lonf=-36,lati=-7.78,latf=-5, mapa = "PPA", mapa_brasil = T,mapa_amsul = T, paleta_rev = F, paleta = "YlGnBu", legenda_intervalos = F)
+plota_mapa(prec,titulo = expression(paste("Precipitation (mm yr"^"-1",")")),legenda="Precipitação (mm)", vlon=longitudes,vlat=latitudes,loni=-39,lonf=-36,lati=-7.78,latf=-5, mapa = "PPA", mapa_brasil = T,mapa_amsul = T, paleta_rev = F, paleta = "YlGnBu", legenda_intervalos = F, ,contorno = F)
 
 plota_mapa(temperatura,vlon=longitudes,vlat=latitudes)
 
