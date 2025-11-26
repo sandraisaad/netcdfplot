@@ -45,5 +45,20 @@ temperatura_ponto <- temperatura[x = coordx, y = coordy, ]
 df_temperatura_ponto<-data.frame(date, temperatura_ponto)
 
 plot(df_temperatura_ponto)
+
+# Plota o mapa do vento 
+
+u10m <- carrega_variavel(gfs, "ugrd10m");
+
+v10m <- carrega_variavel(gfs, "vgrd10m");
+
+
+u10m_t1 <- u10m[,,1];
+
+v10m_t1 <- v10m[,,1];
+
+plota_mapa_vento(u10m_t1,v10m_t1,vlon = longitudes, vlat = latitudes, mapa_brasil = T, mapa_amsul = T,skip = 3)
+
+
 }
 
