@@ -33,7 +33,7 @@ carrega_tempo <- function(nc,time="time"){
     tempof <- as.POSIXct(tempo*3600,origin=tempo0, tz="UTC") #+ tempo
     } else if (grepl("seconds", unidade)) {
       tempof <- as.POSIXct(tempo,origin=tempo0, tz = "UTC")
-    } else if (grepl("days",origin=tempo0, unidade)) {
+    } else if (grepl("days", unidade)) {
       tempof <- as.POSIXct(tempo* 86400, tz="UTC") #+ tempo
     } else {
       print("[E] Unidade nao definida.")
