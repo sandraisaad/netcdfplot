@@ -3,19 +3,41 @@
 #' Entrar com o netcdf já carregado
 #'
 #' @param nc Arquivo carregado em netcdf
+#' @param  time  Entrar com time ou valid_time, dependendo como vem no nc
 #'
 #' @return Esta função carrega o tempo de um arquivo Netcdf no formato adequado
 #' @export
 #'
 #' @examples carrega_tempo(gfs)
-carrega_tempo <- function(nc){
-  tempo_unidade <- ncdf4::ncatt_get(nc,"time","units")$value
+carrega_tempo <- function(nc,time="time"){
+  tempo_unidade <- ncdf4::ncatt_get(nc,time,"units")$value
   tempo0 <- strsplit(tempo_unidade," ")[[1]][3]
-  unidade_tempo <- strsplit(tempo_unidade," ")[[1]][1]
-  hora0 <- as.integer(substr(as.character(strsplit(tempo_unidade," ")[[1]][4]),1,2))
-  tempo <- nc$dim$time$vals+hora0
-  tempof <- ncdf.tools::convertDateNcdf2R(tempo, units = unidade_tempo, origin = as.POSIXct(tempo0, tz = "UTC"),
-                              time.format = c("%Y-%m-%d", "%Y-%m-%d %H:%M:%S","%Y-%m-%d %H:%M", "%Y-%m-%d %Z %H:%M", "%Y-%m-%d %Z %H:%M:%S"))
+  unidade <- strsplit(tempo_unidade," ")[[1]][1]
+  if (length(strsplit(tempo_unidade, " ")[[1]]) == 4) {
+    hora0 <- as.integer(substr(as.character(strsplit(tempo_unidade," ")[[1]][4]),1,2))
+  }
+  else {
+    hora0 <- 0
+  }
+  if (time == "time") {
+    tempo <- nc$dim$time$vals + hora0
+  } else if (time == "valid_time") {
+    tempo <- nc$dim$valid_time$vals + hora0
+  }
+  # tempof <- ncdf.tools::convertDateNcdf2R(tempo, units = unidade, origin = as.POSIXct(tempo0, tz = "UTC"),
+  #                                      time.format = c("%Y-%m-%d", "%Y-%m-%d %H:%M:%S","%Y-%m-%d %H:%M", "%Y-%m-%d %Z %H:%M", "%Y-%m-%d %Z %H:%M:%S"))
+  # Reescrito pelo trecho abaixo em 31/02/206 devido a depreciacao da biblioteca ncdf.tools
+  if (grepl("hours", unidade)) {
+    tempof <- as.POSIXct(tempo*3600,origin=tempo0, tz="UTC") #+ tempo
+    } else if (grepl("seconds", unidade)) {
+      tempof <- as.POSIXct(tempo,origin=tempo0, tz = "UTC")
+    } else if (grepl("days",origin=tempo0, unidade)) {
+      tempof <- as.POSIXct(tempo* 86400, tz="UTC") #+ tempo
+    } else {
+      print("[E] Unidade nao definida.")
+      print(unidade)
+      return()
+    }
   return(tempof)
 }
 
