@@ -9,6 +9,8 @@
 #' @export
 #'
 #' @examples carrega_tempo(gfs)
+#'           carrega_tempo(era5,time="valid_time")
+
 carrega_tempo <- function(nc,time="time"){
   tempo_unidade <- ncdf4::ncatt_get(nc,time,"units")$value
   tempo0 <- strsplit(tempo_unidade," ")[[1]][3]
