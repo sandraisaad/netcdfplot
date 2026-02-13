@@ -1,7 +1,7 @@
 Package: netcdfplot
 Type: Package
 Title: netcdfplot
-Version: 1.2.2
+Version: 1.3
 Author: Sandra I. Saad
 Maintainer: Sandra I. Saad <sandraisaad@gmail.com>
 Description: Ferramentas para plotar mapas dos dados em Netcdf e realizar analises espaciais
