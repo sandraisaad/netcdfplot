@@ -4,10 +4,12 @@
 \alias{carrega_tempo}
 \title{carrega_tempo}
 \usage{
-carrega_tempo(nc)
+carrega_tempo(nc, time = "time")
 }
 \arguments{
 \item{nc}{Arquivo carregado em netcdf}
+
+\item{time}{Entrar com time ou valid_time, dependendo como vem no nc}
 }
 \value{
 Esta função carrega o tempo de um arquivo Netcdf no formato adequado
@@ -17,4 +19,5 @@ Entrar com o netcdf já carregado
 }
 \examples{
 carrega_tempo(gfs)
+          carrega_tempo(era5,time="valid_time")
 }
