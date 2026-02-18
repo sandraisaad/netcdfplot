@@ -3,51 +3,66 @@
 \docType{package}
 \name{netcdfplot}
 \alias{netcdfplot}
-\title{netcdfplot}
+\alias{netcdfplot-package}
+\title{netcdfplot: Tools for plotting and analyzing NetCDF geospatial and temporal data}
 \description{
-Ferramentas para plotar e analisar dados em Netcdf
+The \pkg{netcdfplot} package provides a set of tools for loading, processing,
+visualizing and analyzing georeferenced NetCDF data in R.
 }
 \details{
-Sandra I. Saad
-sandraisaad@gmail.com
+It allows users to:
+\itemize{
+  \item Load NetCDF model outputs
+  \item Extract spatial and temporal dimensions
+  \item Visualize georeferenced variables
+  \item Plot wind vector fields
+  \item Compute spatial statistics
+  \item Extract and visualize time series at specific coordinates
 }
-\section{Exemplos}{
+
+The package is designed for atmospheric science and geoscience applications.
+}
+\section{Example workflow}{
 
 
-#Carrega o arquivo do Netcdf, as dimensoes (longitude, latitude e tempo) e a variavel
+\preformatted{
 
-gfs <- carrega_modelo("/data/gfs_2019092500mod.nc");
+# Load NetCDF file, extract dimensions and the desired variable
+library(netcdfplot)
 
-longitudes <- carrega_longitude(gfs);
+arq <- gfs_example_file()     # Load example NetCDF file
+gfs <- carrega_modelo(arq)
 
-latitudes <- carrega_latitude(gfs);
+longitudes <- carrega_longitude(gfs)
+latitudes  <- carrega_latitude(gfs)
+date       <- carrega_tempo(gfs)
 
-date <- carrega_tempo(gfsmodel)
+# Plot temperature map (time step 1) and compute maximum value within an area
+shownames(gfs)
 
-temperatura <- carrega_variavel(gfs, "tmp2m");
+temperature <- carrega_variavel(gfs, "tmp2m")
 
-#Plota o mapa da temperatura no tempo 1 e calcula o valor maximo na area
+temperature_t1 <- temperature[,,1]
 
-temperatura_tempo1 <- temperatura[,,1];
+plota_mapa(
+  temperature_t1,
+  vlon = longitudes,
+  vlat = latitudes,
+  mapa_brasil = TRUE,
+  mapa_amsul = TRUE,
+  paleta = "YlGnBu"
+)
 
-plota_mapa(temperatura_tempo1, vlon = longitudes, vlat = latitudes, mapa_brasil = T, mapa_amsul = T, paleta = "YlGnBu");
+# Extract and plot time series at a specific location
+coordx <- lon2x(longitudes, -46.5)
+coordy <- lat2y(latitudes, -23.5)
 
-media_area(temperatura_tempo1, mapa = "Brasil", vlat = latitudes, vlon = longitudes, fun = "max")
+temperature_xy <- temperature[x = coordx, y = coordy, ]
+df_temperature_xy <- data.frame(date, temperature_xy)
 
-# Plota uma serie temporal de um ponto
+plot(df_temperature_xy)
 
-coordx <- lon2x(longitudes,-46.5)
-
-coordy <- lat2y(latitudes,-23.5)
-
-temperatura_ponto <- temperatura[x = coordx, y = coordy, ]
-
-df_temperatura_ponto<-data.frame(date, temperatura_ponto)
-
-plot(df_temperatura_ponto)
-
-# Plota o mapa do vento
-
+#Plota o mapa do vento
 u10m <- carrega_variavel(gfs, "ugrd10m");
 v10m <- carrega_variavel(gfs, "vgrd10m");
 
@@ -55,5 +70,8 @@ u10m_t1 <- u10m[,,1];
 v10m_t1 <- v10m[,,1];
 
 plota_mapa_vento(u10m_t1,v10m_t1,vlon = longitudes, vlat = latitudes, mapa_brasil = T, mapa_amsul = T,skip = 3)
+
+}
 }
 
+\keyword{internal}

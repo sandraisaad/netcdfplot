@@ -85,7 +85,7 @@ temperature <- carrega_variavel(gfs, "tmp2m")
 temperature_t1 <- temperature[,,1]
 
 plota_mapa(
-  temperatura_t1,
+  temperature_t1,
   vlon = longitudes,
   vlat = latitudes,
   mapa_brasil = TRUE,
@@ -94,7 +94,7 @@ plota_mapa(
 )
 
 media_area(
-  temperatura_t1,
+  temperature_t1,
   mapa = "Brasil",
   vlat = latitudes,
   vlon = longitudes,
