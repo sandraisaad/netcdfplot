@@ -24,7 +24,7 @@ e15: v10m <- carrega_variavel(gfs, "vgrd10m");
 e16: u10m_t1 <- u10m[,,1];
 e17: v10m_t1 <- v10m[,,1];
 e18: plota_mapa_vento(u10m_t1,v10m_t1,vlon = longitudes, vlat = latitudes, mapa_brasil = T, mapa_amsul = T)
-License: GPL-3
+License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
 RoxygenNote: 7.2.3
