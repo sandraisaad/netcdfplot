@@ -6,10 +6,14 @@
 \alias{netcdfplot-package}
 \title{netcdfplot: Tools for plotting and analyzing NetCDF geospatial and temporal data}
 \description{
-The \pkg{netcdfplot} package provides a set of tools for loading, processing,
-visualizing and analyzing georeferenced NetCDF data in R.
+Author: Sandra Isay Saad
+\email{sandraisaad@gmail.com}
+\href{https://orcid.org/0000-0002-4380-3175}{ORCID}
 }
 \details{
+The \pkg{netcdfplot} package provides a set of tools for loading, processing,
+visualizing and analyzing georeferenced NetCDF data in R.
+
 It allows users to:
 \itemize{
   \item Load NetCDF model outputs
