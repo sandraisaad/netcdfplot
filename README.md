@@ -1,84 +1,146 @@
-## R/netcdfplot
+# netcdfplot
 
-[Sandra I. Saad](http://lattes.cnpq.br/0103102694865890)
+Tools for plotting and analyzing NetCDF geospatial and temporal data in R.
 
-sandraisaad@gmail.com
+**Author:** Sandra I. Saad\
+**Contact:** sandraisaad@gmail.com\
+[Lattes CV](http://lattes.cnpq.br/0103102694865890)
+[ORCID](https://orcid.org/0000-0002-4380-3175)
 
----
+------------------------------------------------------------------------
 
-R/netcdfplot eh um conjunto de ferramentas para plotar mapas dos dados em Netcdf e realizar analises espaciai.
+## Overview
 
----
+`netcdfplot` provides a set of tools to:
 
-### Exemplos
+-   Load NetCDF model outputs
+-   Extract spatial and temporal dimensions
+-   Visualize georeferenced variables
+-   Plot wind vector fields
+-   Compute spatial statistics
+-   Extract and visualize time series at specific coordinates
 
-#### Carrega o arquivo do Netcdf, as dimensoes (longitude, latitude e tempo) e a variavel
+The package is designed for atmospheric and geoscience applications.
 
-gfs <- carrega_modelo("/data/gfs_2019092500mod.nc"); 
+------------------------------------------------------------------------
 
-longitudes <- carrega_longitude(gfs); 
+## Installation
 
-latitudes <- carrega_latitude(gfs); 
+### From GitHub
 
-date <- carrega_tempo(gfsmodel)
+``` r
+install.packages("remotes")
+remotes::install_github("sandraisaad/netcdfplot")
+```
 
-temperatura <- carrega_variavel(gfs, "tmp2m"); 
+### From Bitbucket
 
-#### Plota o mapa da temperatura no tempo 1 e calcula o valor maximo na area
+``` r
+remotes::install_bitbucket("sandraisaysaad/netcdfplot")
+```
 
-temperatura_tempo1 <- temperatura[,,1]; 
+------------------------------------------------------------------------
 
-plota_mapa(temperatura_tempo1, vlon = longitudes, vlat = latitudes, mapa_brasil = T, mapa_amsul = T, paleta = "YlGnBu"); 
+## Dependencies
 
-media_area(temperatura_tempo1, mapa = "Brasil", vlat = latitudes, vlon = longitudes, fun = "max")
+If not already installed, you may need:
 
-#### Plota uma serie temporal de um ponto 
+``` r
+install.packages(c(
+  "ggplot2",
+  "ncdf4",
+  "sp",
+  "metR",
+  "RColorBrewer"
+))
+```
 
-coordx <- lon2x(longitudes,-46.5)
+------------------------------------------------------------------------
 
-coordy <- lat2y(latitudes,-23.5)
+## Example Workflow
 
-temperatura_ponto <- temperatura[x = coordx, y = coordy, ]
+### Load NetCDF file, extract dimensions and the desired variable
 
-df_temperatura_ponto<-data.frame(date, temperatura_ponto)
+``` r
 
-plot(df_temperatura_ponto)
+library("netcdfplot")
 
-#### Plota o mapa do vento 
+arq <- gfs_example_file()  		# Load the example file name
+gfs  <- carrega_modelo(arq) 	# Or use your own Netcdf like gfs <- carrega_modelo("/data/gfs_2019092500.nc")
 
-u10m <- carrega_variavel(gfs, "ugrd10m");
+longitudes <- carrega_longitude(gfs)
+latitudes  <- carrega_latitude(gfs)
+date       <- carrega_tempo(gfs)
 
-v10m <- carrega_variavel(gfs, "vgrd10m");
+shownames(gfs)  # Show the variable names, so you can look for "temperature", for example
 
+temperature <- carrega_variavel(gfs, "tmp2m")
+```
 
-u10m_t1 <- u10m[,,1];
+------------------------------------------------------------------------
 
-v10m_t1 <- v10m[,,1];
+### Plot temperature map (time step 1) and compute maximum value within an area
 
-plota_mapa_vento(u10m_t1,v10m_t1,vlon = longitudes, vlat = latitudes, mapa_brasil = T, mapa_amsul = T,skip = 3)
+``` r
+temperature_t1 <- temperature[,,1]
 
+plota_mapa(
+  temperatura_t1,
+  vlon = longitudes,
+  vlat = latitudes,
+  mapa_brasil = TRUE,
+  mapa_amsul = TRUE,
+  paleta = "YlGnBu"
+)
 
+media_area(
+  temperatura_t1,
+  mapa = "Brasil",
+  vlat = latitudes,
+  vlon = longitudes,
+  fun = "max"
+)
+```
 
-### Instalacao no R
+------------------------------------------------------------------------
 
-library(devtools) #ou:
+### Extract and plot time series at a specific location
 
-library(remotes)
+``` r
+coordx <- lon2x(longitudes, -46.5)
+coordy <- lat2y(latitudes, -23.5)
 
-install_github("sandraisaad/netcdfplot")
+temperature_xy <- temperature[x = coordx, y = coordy, ]
 
-ou:
+df_temperature_xy <- data.frame(date, temperature_xy)
 
-install_bitbucket("sandraisaysaad/netcdfplot")
+plot(df_temperature_xy)
+```
 
-### Instalacao das dependencias
-install.packages("ggplot2")
+------------------------------------------------------------------------
 
-install.packages("ncdf4")
+### Plot wind vector map
 
-install.packages("sp")
+``` r
+u10m <- carrega_variavel(gfs, "ugrd10m")
+v10m <- carrega_variavel(gfs, "vgrd10m")
 
-install.packages("metR")
+u10m_t1 <- u10m[,,1]
+v10m_t1 <- v10m[,,1]
 
-install.packages("RColorBrewer")
+plota_mapa_vento(
+  u10m_t1,
+  v10m_t1,
+  vlon = longitudes,
+  vlat = latitudes,
+  mapa_brasil = TRUE,
+  mapa_amsul = TRUE,
+  skip = 3
+)
+```
 
+------------------------------------------------------------------------
+
+## License
+
+This project is licensed under the MIT License.
