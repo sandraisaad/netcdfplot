@@ -65,6 +65,10 @@ library(devtools) #ou:
 
 library(remotes)
 
+install_github("sandraisaad/netcdfplot")
+
+ou:
+
 install_bitbucket("sandraisaysaad/netcdfplot")
 
 ### Instalacao das dependencias
