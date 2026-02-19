@@ -1,4 +1,4 @@
-#' Plota um mapa
+#' Plot a map
 #'
 #' @param array_var2d Matriz (em 2 dimensões) com o campo a ser plotado
 #' @param titulo Título do mapa (opcional)
@@ -101,9 +101,9 @@ plota_mapa <- function(array_var2d,titulo="",legenda="",vlon,vlat,loni=NA,lonf=N
 }
 
 
-#' Salva a imagem
+#' Save image
 #'
-#' Plota na tela, salva em jpg e em svg (se escolhido)
+#' Plot image and save in jpg and svg (if chosen)
 #'
 #' @param plt A figura plotada no R
 #' @param file_name Nome da Figura sem extensão
@@ -135,7 +135,7 @@ salva_figura<-function(plt,file_name, width=2500,height=2000,salva_svg=F){
 }
 
 
-#' Plota o campo vetorial do vento
+#' Plots wind vectorial field 
 #'
 #' @param array_u2d Matriz da componente zonal do vento, u, em 2 dimensões
 #' @param array_v2d Matriz da componente meridional do vento, v, em 2 dimensões

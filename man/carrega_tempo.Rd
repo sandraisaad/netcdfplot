@@ -2,22 +2,23 @@
 % Please edit documentation in R/carrega_dimensoes.R
 \name{carrega_tempo}
 \alias{carrega_tempo}
-\title{carrega_tempo}
+\title{Load date/time vector}
 \usage{
 carrega_tempo(nc, time = "time")
 }
 \arguments{
-\item{nc}{Arquivo carregado em netcdf}
+\item{nc}{The loaded netcdfile file (using the function carrega_modelo)}
 
-\item{time}{Entrar com time ou valid_time, dependendo como vem no nc}
+\item{time}{Name of the time variable in the NetCDF file. Use
+\code{"time"} (default) or \code{"valid_time"}.}
 }
 \value{
-Esta função carrega o tempo de um arquivo Netcdf no formato adequado
+A date/time vector in POSIXct format
 }
 \description{
-Entrar com o netcdf já carregado
+Returns the date/time vector from a NetCDF file in POSIXct format
 }
 \examples{
 carrega_tempo(gfs)
-          carrega_tempo(era5,time="valid_time")
+carrega_tempo(era5,time="valid_time")
 }

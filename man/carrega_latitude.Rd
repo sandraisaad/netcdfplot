@@ -2,20 +2,20 @@
 % Please edit documentation in R/carrega_inicial.R
 \name{carrega_latitude}
 \alias{carrega_latitude}
-\title{Carrega o vetor de latitudes}
+\title{Load the latitude vector}
 \usage{
 carrega_latitude(modelo, nome_latitude = "latitude")
 }
 \arguments{
-\item{modelo}{O Netcdf já carregado com a funcao (carrega_modelo)}
+\item{modelo}{The loaded netcdfile file (using the function carrega_modelo)}
 
-\item{nome_latitude}{latitude, lat, latitude}
+\item{nome_latitude}{The latitude name as it is in the Netcdf file (e.g. latitude, lat, LATITUDE)}
 }
 \value{
-o vetor de latitude carregado
+Returns the latitude vector
 }
 \description{
-Carrega o vetor de latitudes
+Load the latitude vector
 }
 \examples{
 latitudes <- carrega_latitude(gfs,nome_latitude="lat")

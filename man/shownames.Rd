@@ -2,18 +2,18 @@
 % Please edit documentation in R/carrega_dimensoes.R
 \name{shownames}
 \alias{shownames}
-\title{shownames}
+\title{Shows the names of the variables available in the Netcdf file}
 \usage{
 shownames(nc)
 }
 \arguments{
-\item{nc}{Arquivo carregado em netcdf}
+\item{nc}{The loaded netcdfile file (using the function carrega_modelo)}
 }
 \value{
-nome das variaveis do arquivo
+the names of the variables available in the Netcdf file
 }
 \description{
-shownames
+Shows the names of the variables available in the Netcdf file
 }
 \examples{
 shownames(gfs)

@@ -2,20 +2,21 @@
 % Please edit documentation in R/carrega_dimensoes.R
 \name{lat2y}
 \alias{lat2y}
-\title{lat2y}
+\title{Converts a given Latitude to an y index}
 \usage{
 lat2y(vetor_lat, lati)
 }
 \arguments{
-\item{vetor_lat}{Vetor com as latitude}
+\item{vetor_lat}{Latitude vector}
 
-\item{lati}{Latitude a set convertida para y}
+\item{lati}{Latitude value to be converted to an y index}
 }
 \value{
-posição do vetor com a latitude mais próxima da solicitada
+The index of the latitude in \code{vetor_lat} that is
+closest to the requested value.
 }
 \description{
-Converte a latitude em coordenada y
+Converts a latitude value to its corresponding y index (from 1 to the length of the latitude vector).
 }
 \examples{
 lat2y(latitudes,-23.5)

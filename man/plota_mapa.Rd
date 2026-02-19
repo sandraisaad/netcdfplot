@@ -2,7 +2,7 @@
 % Please edit documentation in R/plota.R
 \name{plota_mapa}
 \alias{plota_mapa}
-\title{Plota um mapa}
+\title{Plot a map}
 \usage{
 plota_mapa(
   array_var2d,
@@ -66,7 +66,7 @@ plota_mapa(
 \item{contorno}{Se T, mostra os contornos do plot}
 }
 \description{
-Plota um mapa
+Plot a map
 }
 \examples{
 

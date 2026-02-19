@@ -2,20 +2,20 @@
 % Please edit documentation in R/carrega_inicial.R
 \name{carrega_longitude}
 \alias{carrega_longitude}
-\title{Carrega o vetor de longitudes}
+\title{Load the longitude vector}
 \usage{
 carrega_longitude(modelo, nome_longitude = "longitude")
 }
 \arguments{
-\item{modelo}{O Netcdf já carregado com a funcao (carrega_modelo)}
+\item{modelo}{The loaded netcdfile file (using the function carrega_modelo)}
 
-\item{nome_longitude}{longitude, lon, LONGITUDE}
+\item{nome_longitude}{The longitude name as it is in the Netcdf file (e.g. longitude, lon, LONGITUDE)}
 }
 \value{
-o vetor de longitude carregado
+Returns the longitude vector
 }
 \description{
-Converte 0 a 360 em -180 a 180
+Converts from 0-360 to -180 to 180 degrees
 }
 \examples{
 longitudes <- carrega_longitude(gfs,nome_longitude="lon")

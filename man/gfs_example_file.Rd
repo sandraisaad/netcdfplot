@@ -2,13 +2,16 @@
 % Please edit documentation in R/gfs_example.R
 \name{gfs_example_file}
 \alias{gfs_example_file}
-\title{Caminho para o NetCDF de exemplo}
+\title{Find the NetCDF file provided for testing}
 \usage{
 gfs_example_file()
 }
 \value{
-Caminho completo para o arquivo .nc
+The full path to the example .nc file.
 }
 \description{
-Caminho para o NetCDF de exemplo
+Find the NetCDF file provided for testing
+}
+\examples{
+arq <- gfs_example_file()
 }

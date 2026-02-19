@@ -1,15 +1,16 @@
-#' carrega_tempo
+#' Load date/time vector 
 #'
-#' Entrar com o netcdf já carregado
+#' Returns the date/time vector from a NetCDF file in POSIXct format
 #'
-#' @param nc Arquivo carregado em netcdf
-#' @param  time  Entrar com time ou valid_time, dependendo como vem no nc
+#' @param nc The loaded netcdfile file (using the function carrega_modelo)
+#' @param  time  Name of the time variable in the NetCDF file. Use
+#' \code{"time"} (default) or \code{"valid_time"}.
 #'
-#' @return Esta função carrega o tempo de um arquivo Netcdf no formato adequado
+#' @return A date/time vector in POSIXct format
 #' @export
 #'
 #' @examples carrega_tempo(gfs)
-#'           carrega_tempo(era5,time="valid_time")
+#' carrega_tempo(era5,time="valid_time")
 
 carrega_tempo <- function(nc,time="time"){
   tempo_unidade <- ncdf4::ncatt_get(nc,time,"units")$value
@@ -43,14 +44,15 @@ carrega_tempo <- function(nc,time="time"){
   return(tempof)
 }
 
-#' lon2x
+#' Converts a given Longitude to an x index 
 #'
-#' Converte a longitude em coordenada x
+#' Converts a longitude value to its corresponding x index (from 1 to the length of the longitude vector).
 #'
-#' @param vetor_lon Vetor com as longitudes
-#' @param loni Longitude a set convertida para x
+#' @param vetor_lon Longitude vector
+#' @param loni Longitude value to be converted to an x index
 #'
-#' @return posição do vetor com a longitude mais próxima da solicitada
+#' @return The index of the longitude in \code{vetor_lon} that is
+#' closest to the requested value.
 #' @export
 #'
 #' @examples lon2x(longitudes,-46.5)
@@ -73,20 +75,21 @@ lon2x <- function(vetor_lon,loni){
   return(x)
 }
 
-#' lat2y
+#' Converts a given Latitude to an y index 
 #'
-#' Converte a latitude em coordenada y
+#' Converts a latitude value to its corresponding y index (from 1 to the length of the latitude vector).
 #'
-#' @param vetor_lat Vetor com as latitude
-#' @param lati Latitude a set convertida para y
+#' @param vetor_lat Latitude vector
+#' @param lati Latitude value to be converted to an y index
 #'
-#' @return posição do vetor com a latitude mais próxima da solicitada
+#' @return The index of the latitude in \code{vetor_lat} that is
+#' closest to the requested value.
 #' @export
 #'
 #' @examples lat2y(latitudes,-23.5)
 lat2y <- function(vetor_lat,lati){
   # Converte a latitude em coordenada y
-  # vetor_lat eh o vetor da latgitude
+  # vetor_lat eh o vetor da latitude
   # lati eh a latgitude de um ponto a ser convertida
   if ( (lati >= min(vetor_lat)) & (lati <= max(vetor_lat)) ){
     y <- which.min(abs(vetor_lat - lati))[1]
@@ -97,11 +100,11 @@ lat2y <- function(vetor_lat,lati){
   return(y)
 }
 
-#' shownames
+#' Shows the names of the variables available in the Netcdf file
 #'
-#' @param nc Arquivo carregado em netcdf
+#' @param nc The loaded netcdfile file (using the function carrega_modelo)
 #'
-#' @return nome das variaveis do arquivo
+#' @return the names of the variables available in the Netcdf file
 #' @export
 #'
 #' @examples shownames(gfs)
@@ -111,14 +114,14 @@ shownames <- function(nc){
   names(nc[['var']])
 }
 
-#' explainname
+#' Provides details about the requested variable in the netcdf file
 #'
-#' Fornece detalhes sobre a variável do Netcdf
+#' Provides details about units and others
 #'
-#' @param nc Arquivo carregado em netcdf
-#' @param var Nome da variável
+#' @param nc The loaded netcdfile file (using the function carrega_modelo)
+#' @param var Variable name
 #'
-#' @return Detalhes sobre a variável
+#' @return Details about the requested variable
 #' @export
 #'
 #' @examples explainname(gfs,"precipitation")

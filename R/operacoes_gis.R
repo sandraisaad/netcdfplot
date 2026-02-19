@@ -57,9 +57,7 @@ carrega_shape <- function(mapa=NA){
 }
 
 
-#' matrix2raster
-#'
-#' Converte uma matriz para um raster em WGS85 longlat
+#' Converts a matrix to raster in WGS85 longlat
 #'
 #' @param matrix Matriz de dimensão vlon X vlat
 #' @param vlat Vetor de latitudes
@@ -129,18 +127,16 @@ extractfromshape <- function(raster,shape,fun="mean",quantil=NA){
 
 }
 
-#' media_area
+#' Extracts the mean of a matrix within a shapefile
 #'
-#'Extrai a media de uma matriz em um shape. Converte p/ raster primeiro
-#'
-#' @param matrix Matriz de dimensão vlon X vlat
+#' @param matrix Matrix of dimension vlon X vlat
 #' @param mapa Definido para Brasil, America_do_Sul, Mundo, Pianco, PPA, Piracicaba
-#' @param vlat Vetor de latitudes
-#' @param vlon Vetor de longitudes
+#' @param vlat Latitude vector
+#' @param vlon Longitudes vector
 #' @param fun A função estatística mean, min ou max
 #' @param quantil Valor entre 0 e 1 do quantil para obter dentro da área do shape
 #'
-#' @return A média dentro do shape
+#' @return The mean within a shapefile
 #' @export
 #'
 #' @examples media_area(temperatura_matriz, mapa = "Brasil", vlat = latitudes, vlon = longitudes, fun="max")

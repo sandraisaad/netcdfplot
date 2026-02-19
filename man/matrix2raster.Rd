@@ -2,7 +2,7 @@
 % Please edit documentation in R/operacoes_gis.R
 \name{matrix2raster}
 \alias{matrix2raster}
-\title{matrix2raster}
+\title{Converts a matrix to raster in WGS85 longlat}
 \usage{
 matrix2raster(matrix, vlat, vlon)
 }
@@ -17,7 +17,7 @@ matrix2raster(matrix, vlat, vlon)
 raster
 }
 \description{
-Converte uma matriz para um raster em WGS85 longlat
+Converts a matrix to raster in WGS85 longlat
 }
 \examples{
 matrix2raster(matriz,vlat,vlon)

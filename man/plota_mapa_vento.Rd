@@ -2,7 +2,7 @@
 % Please edit documentation in R/plota.R
 \name{plota_mapa_vento}
 \alias{plota_mapa_vento}
-\title{Plota o campo vetorial do vento}
+\title{Plots wind vectorial field}
 \usage{
 plota_mapa_vento(
   array_u2d,
@@ -60,7 +60,7 @@ plota_mapa_vento(
 \item{skip}{Pula alguns pontos de grades para nao ficar poluido. Padrao 3}
 }
 \description{
-Plota o campo vetorial do vento
+Plots wind vectorial field
 }
 \examples{
 

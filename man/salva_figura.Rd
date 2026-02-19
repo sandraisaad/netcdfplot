@@ -2,7 +2,7 @@
 % Please edit documentation in R/plota.R
 \name{salva_figura}
 \alias{salva_figura}
-\title{Salva a imagem}
+\title{Save image}
 \usage{
 salva_figura(plt, file_name, width = 2500, height = 2000, salva_svg = F)
 }
@@ -18,7 +18,7 @@ salva_figura(plt, file_name, width = 2500, height = 2000, salva_svg = F)
 \item{salva_svg}{Se T salva em svg também}
 }
 \description{
-Plota na tela, salva em jpg e em svg (se escolhido)
+Plot image and save in jpg and svg (if chosen)
 }
 \examples{
 salva_figura(plt,"figura_temperatura",width=2500,height=2000,salva_svg=F)

@@ -2,28 +2,28 @@
 % Please edit documentation in R/operacoes_gis.R
 \name{media_area}
 \alias{media_area}
-\title{media_area}
+\title{Extracts the mean of a matrix within a shapefile}
 \usage{
 media_area(matrix, mapa, vlat, vlon, fun = "mean", quantil = NA)
 }
 \arguments{
-\item{matrix}{Matriz de dimensão vlon X vlat}
+\item{matrix}{Matrix of dimension vlon X vlat}
 
 \item{mapa}{Definido para Brasil, America_do_Sul, Mundo, Pianco, PPA, Piracicaba}
 
-\item{vlat}{Vetor de latitudes}
+\item{vlat}{Latitude vector}
 
-\item{vlon}{Vetor de longitudes}
+\item{vlon}{Longitudes vector}
 
 \item{fun}{A função estatística mean, min ou max}
 
 \item{quantil}{Valor entre 0 e 1 do quantil para obter dentro da área do shape}
 }
 \value{
-A média dentro do shape
+The mean within a shapefile
 }
 \description{
-Extrai a media de uma matriz em um shape. Converte p/ raster primeiro
+Extracts the mean of a matrix within a shapefile
 }
 \examples{
 media_area(temperatura_matriz, mapa = "Brasil", vlat = latitudes, vlon = longitudes, fun="max")

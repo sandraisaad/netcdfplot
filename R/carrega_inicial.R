@@ -1,12 +1,12 @@
 
 
-#' carrega o modelo (o arquivo em Netcdf)
+#' Load the netcdf file
 #'
 #' Abre o arquivo com a funcao nc_open do ncdf4
 #'
 #' @param arquivo Nome (e caminho) do arquivo em netcdf
 #'
-#' @return O modelo carregado
+#' @return The loaded netecdf file
 #' @export
 #'
 #' @examples gfs <- carrega_modelo("/data/gfs_2019092500mod.nc")
@@ -15,14 +15,14 @@ carrega_modelo <- function(arquivo){
   return(modelo)
 }
 
-#' Carrega o vetor de longitudes
+#' Load the longitude vector
 #'
-#' Converte 0 a 360 em -180 a 180
+#' Converts from 0-360 to -180 to 180 degrees
 #'
-#' @param modelo O Netcdf já carregado com a funcao (carrega_modelo)
-#' @param nome_longitude longitude, lon, LONGITUDE
+#' @param modelo The loaded netcdfile file (using the function carrega_modelo)
+#' @param nome_longitude The longitude name as it is in the Netcdf file (e.g. longitude, lon, LONGITUDE)
 #'
-#' @return o vetor de longitude carregado
+#' @return Returns the longitude vector
 #' @export
 #'
 #' @examples longitudes <- carrega_longitude(gfs,nome_longitude="lon")
@@ -33,12 +33,12 @@ carrega_longitude <- function(modelo,nome_longitude="longitude"){
   return(lon)
 }
 
-#' Carrega o vetor de latitudes
+#' Load the latitude vector
 #'
-#' @param modelo O Netcdf já carregado com a funcao (carrega_modelo)
-#' @param nome_latitude latitude, lat, latitude
+#' @param modelo The loaded netcdfile file (using the function carrega_modelo)
+#' @param nome_latitude  The latitude name as it is in the Netcdf file (e.g. latitude, lat, LATITUDE)
 #'
-#' @return o vetor de latitude carregado
+#' @return Returns the latitude vector
 #' @export
 #'
 #' @examples latitudes <- carrega_latitude(gfs,nome_latitude="lat")
@@ -48,12 +48,12 @@ carrega_latitude <- function(modelo,nome_latitude="latitude"){
   return(lat)
 }
 
-#' Carrega o dado da variavel de um netcdf
+#' Load the variable data (e.g. temperature, precipitation) of a netcdf file
 #'
-#' @param modelo O Netcdf já carregado com a funcao (carrega_modelo)
-#' @param nome_variavel Nome da variavel
+#' @param modelo The loaded netcdfile file (using the function carrega_modelo)
+#' @param nome_variavel Name of the variable (use shownames() function to find it)
 #'
-#' @return O array da variavel (temperatura, precipitacao, etc)
+#' @return THe variable array
 #' @export
 #'
 #' @examples temperatura <- carrega_variavel(gfs,"tmp2m")

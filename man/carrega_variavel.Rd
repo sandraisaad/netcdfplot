@@ -2,20 +2,20 @@
 % Please edit documentation in R/carrega_inicial.R
 \name{carrega_variavel}
 \alias{carrega_variavel}
-\title{Carrega o dado da variavel de um netcdf}
+\title{Load the variable data (e.g. temperature, precipitation) of a netcdf file}
 \usage{
 carrega_variavel(modelo, nome_variavel)
 }
 \arguments{
-\item{modelo}{O Netcdf já carregado com a funcao (carrega_modelo)}
+\item{modelo}{The loaded netcdfile file (using the function carrega_modelo)}
 
-\item{nome_variavel}{Nome da variavel}
+\item{nome_variavel}{Name of the variable (use shownames() function to find it)}
 }
 \value{
-O array da variavel (temperatura, precipitacao, etc)
+THe variable array
 }
 \description{
-Carrega o dado da variavel de um netcdf
+Load the variable data (e.g. temperature, precipitation) of a netcdf file
 }
 \examples{
 temperatura <- carrega_variavel(gfs,"tmp2m")

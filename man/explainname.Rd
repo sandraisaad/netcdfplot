@@ -2,20 +2,20 @@
 % Please edit documentation in R/carrega_dimensoes.R
 \name{explainname}
 \alias{explainname}
-\title{explainname}
+\title{Provides details about the requested variable in the netcdf file}
 \usage{
 explainname(nc, var)
 }
 \arguments{
-\item{nc}{Arquivo carregado em netcdf}
+\item{nc}{The loaded netcdfile file (using the function carrega_modelo)}
 
-\item{var}{Nome da variável}
+\item{var}{Variable name}
 }
 \value{
-Detalhes sobre a variável
+Details about the requested variable
 }
 \description{
-Fornece detalhes sobre a variável do Netcdf
+Provides details about units and others
 }
 \examples{
 explainname(gfs,"precipitation")

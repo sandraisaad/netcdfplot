@@ -2,7 +2,7 @@
 % Please edit documentation in R/carrega_inicial.R
 \name{carrega_modelo}
 \alias{carrega_modelo}
-\title{carrega o modelo (o arquivo em Netcdf)}
+\title{Load the netcdf file}
 \usage{
 carrega_modelo(arquivo)
 }
@@ -10,7 +10,7 @@ carrega_modelo(arquivo)
 \item{arquivo}{Nome (e caminho) do arquivo em netcdf}
 }
 \value{
-O modelo carregado
+The loaded netecdf file
 }
 \description{
 Abre o arquivo com a funcao nc_open do ncdf4

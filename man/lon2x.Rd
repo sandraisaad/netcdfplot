@@ -2,20 +2,21 @@
 % Please edit documentation in R/carrega_dimensoes.R
 \name{lon2x}
 \alias{lon2x}
-\title{lon2x}
+\title{Converts a given Longitude to an x index}
 \usage{
 lon2x(vetor_lon, loni)
 }
 \arguments{
-\item{vetor_lon}{Vetor com as longitudes}
+\item{vetor_lon}{Longitude vector}
 
-\item{loni}{Longitude a set convertida para x}
+\item{loni}{Longitude value to be converted to an x index}
 }
 \value{
-posição do vetor com a longitude mais próxima da solicitada
+The index of the longitude in \code{vetor_lon} that is
+closest to the requested value.
 }
 \description{
-Converte a longitude em coordenada x
+Converts a longitude value to its corresponding x index (from 1 to the length of the longitude vector).
 }
 \examples{
 lon2x(longitudes,-46.5)
