@@ -189,7 +189,7 @@ plota_mapa_vento <- function(array_u2d,array_v2d,titulo="",legenda="",vlon,vlat,
 
   df_space$vento_int <- sqrt(df_space$u2d^2 + df_space$v2d^2)
   
-  carrega_shape(mapa = mapa)
+  shape <- carrega_shape(mapa = mapa)
 
   # if (isTRUE(paleta_rev)) {
   #   colours = rev(RColorBrewer::brewer.pal(9, paleta))

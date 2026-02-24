@@ -3,6 +3,7 @@
 export(carrega_latitude)
 export(carrega_longitude)
 export(carrega_modelo)
+export(carrega_shape)
 export(carrega_tempo)
 export(carrega_variavel)
 export(explainname)

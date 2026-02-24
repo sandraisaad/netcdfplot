@@ -3,7 +3,7 @@
 #' @param mapa Entrar com o nome e local do shape ou "Brasil", "America_do_Sul", "Mundo", "Pianco", "PPA", "Piracicaba"
 #'
 #' @return shape
-#' @export shape
+#' @export
 #'
 #' @examples carrega_shape(mapa = "Brasil")
 #' carrega_shape(mapa = "/storage/dados/shapes/shape_bacia_SF/bacia_sao_francisco.shp")
@@ -53,7 +53,7 @@ carrega_shape <- function(mapa=NA){
 
     }
   }
-
+return(shape)
 }
 
 
@@ -146,7 +146,7 @@ media_area <- function(matrix,mapa,vlat,vlon,fun="mean",quantil=NA){
   # Extrai a media de uma matriz em um shape. Converte p/ raster primeiro
   # Sandra Saad 22/02/2021
   #################
-  carrega_shape(mapa = mapa)
+  shape <- carrega_shape(mapa = mapa)
   r <- matrix2raster(matrix,vlat,vlon)
   media <- extractfromshape(r,shape,fun=fun,quantil=quantil)
   return(media)
