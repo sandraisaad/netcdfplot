@@ -18,6 +18,8 @@ Details about the requested variable
 Provides details about units and others
 }
 \examples{
+\dontrun{
 explainname(gfs,"precipitation")
           explainname(gfs,"tmp2m")
+}
 }

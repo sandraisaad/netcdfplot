@@ -18,6 +18,8 @@ Returns the latitude vector
 Load the latitude vector
 }
 \examples{
-latitudes <- carrega_latitude(gfs,nome_latitude="lat")
-          latitudes <- carrega_latitude(gfs)
+if (interactive()) {
+latitudes <- carrega_latitude(modelo,nome_latitude="lat")
+          latitudes <- carrega_latitude(modelo)
+}
 }

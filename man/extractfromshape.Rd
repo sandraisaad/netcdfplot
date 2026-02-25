@@ -21,7 +21,3 @@ Média ou função estatística ou percentil dentro da área do shape
 \description{
 Extrai a media ou outro de um raster dentro da area de um poligono
 }
-\examples{
-extractfromshape(raster,shape,fun="min")
-extractfromshape(raster,shape,quantil=0.9)
-}

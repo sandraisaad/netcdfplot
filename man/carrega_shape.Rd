@@ -15,7 +15,3 @@ shape
 \description{
 carrega_shape
 }
-\examples{
-carrega_shape(mapa = "Brasil")
-carrega_shape(mapa = "/storage/dados/shapes/shape_bacia_SF/bacia_sao_francisco.shp")
-}

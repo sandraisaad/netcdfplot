@@ -70,8 +70,9 @@ Plot a map
 }
 \examples{
 
+\dontrun{
 plota_mapa(prec,titulo = expression(paste("Precipitation (mm yr"^"-1",")")),legenda="Precipitação (mm)", vlon=longitudes,vlat=latitudes,loni=-39,lonf=-36,lati=-7.78,latf=-5, mapa = "PPA", mapa_brasil = T,mapa_amsul = T, paleta_rev = F, paleta = "YlGnBu", legenda_intervalos = F,contorno = F)
 
 plota_mapa(temperatura,vlon=longitudes,vlat=latitudes)
-
+}
 }

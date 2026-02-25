@@ -9,9 +9,11 @@
 #' @return A date/time vector in POSIXct format
 #' @export
 #'
-#' @examples carrega_tempo(gfs)
+#' @examples
+#' \dontrun{
+#' carrega_tempo(gfs)
 #' carrega_tempo(era5,time="valid_time")
-
+#' }
 carrega_tempo <- function(nc,time="time"){
   tempo_unidade <- ncdf4::ncatt_get(nc,time,"units")$value
   tempo0 <- strsplit(tempo_unidade," ")[[1]][3]
@@ -55,7 +57,10 @@ carrega_tempo <- function(nc,time="time"){
 #' closest to the requested value.
 #' @export
 #'
-#' @examples lon2x(longitudes,-46.5)
+#' @examples
+#' \dontrun{
+#' lon2x(longitudes,-46.5)
+#' }
 lon2x <- function(vetor_lon,loni){
   if (loni < 0 & min(vetor_lon > 0)) {   # Soma 360 nas longitude caso necessario
     loni <- loni + 360
@@ -86,7 +91,10 @@ lon2x <- function(vetor_lon,loni){
 #' closest to the requested value.
 #' @export
 #'
-#' @examples lat2y(latitudes,-23.5)
+#' @examples
+#' \dontrun{
+#' lat2y(latitudes,-23.5)
+#' }
 lat2y <- function(vetor_lat,lati){
   # Converte a latitude em coordenada y
   # vetor_lat eh o vetor da latitude
@@ -107,7 +115,10 @@ lat2y <- function(vetor_lat,lati){
 #' @return the names of the variables available in the Netcdf file
 #' @export
 #'
-#' @examples shownames(gfs)
+#' @examples
+#' \dontrun{
+#' shownames(gfs)
+#' }
 shownames <- function(nc){
   # Mostre o nome das variaveis do arquivo
   # entrar com o arquivo nc
@@ -124,8 +135,11 @@ shownames <- function(nc){
 #' @return Details about the requested variable
 #' @export
 #'
-#' @examples explainname(gfs,"precipitation")
+#' @examples 
+#' \dontrun{
+#' explainname(gfs,"precipitation")
 #'           explainname(gfs,"tmp2m")
+#' }
 explainname <- function(nc,var){
   variavel_completa <- ncdf4::ncatt_get(nc,var,"long_name")$value
   return(variavel_completa)

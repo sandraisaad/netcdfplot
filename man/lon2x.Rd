@@ -19,5 +19,7 @@ closest to the requested value.
 Converts a longitude value to its corresponding x index (from 1 to the length of the longitude vector).
 }
 \examples{
+\dontrun{
 lon2x(longitudes,-46.5)
+}
 }

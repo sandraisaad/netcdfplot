@@ -16,5 +16,7 @@ the names of the variables available in the Netcdf file
 Shows the names of the variables available in the Netcdf file
 }
 \examples{
+\dontrun{
 shownames(gfs)
+}
 }

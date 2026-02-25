@@ -6,7 +6,9 @@
 #' @export
 #'
 #' @examples carrega_shape(mapa = "Brasil")
+#' \dontrun{
 #' carrega_shape(mapa = "/storage/dados/shapes/shape_bacia_SF/bacia_sao_francisco.shp")
+#'
 carrega_shape <- function(mapa=NA){
   ###############
   # Carrega na variavel global shape, um determinado mapa (formato shape)
@@ -66,7 +68,10 @@ return(shape)
 #' @return raster
 #' @export
 #'
-#' @examples matrix2raster(matriz,vlat,vlon)
+#' @examples
+#' \dontrun{
+#' matrix2raster(matriz,vlat,vlon)
+#' }
 matrix2raster <- function(matrix,vlat,vlon){
   ###############
   # Converte uma matriz em raster em WGS85 longlat
@@ -98,8 +103,11 @@ matrix2raster <- function(matrix,vlat,vlon){
 #' @return Média ou função estatística ou percentil dentro da área do shape
 #' @export
 #'
-#' @examples extractfromshape(raster,shape,fun="min")
+#' @examples
+#' \dontrun{
+#' extractfromshape(raster,shape,fun="min")
 #' extractfromshape(raster,shape,quantil=0.9)
+#'
 extractfromshape <- function(raster,shape,fun="mean",quantil=NA){
   ###############
   # Extrai a media ou outro de um raster dentro da area de um poligono
@@ -139,8 +147,11 @@ extractfromshape <- function(raster,shape,fun="mean",quantil=NA){
 #' @return The mean within a shapefile
 #' @export
 #'
-#' @examples media_area(temperatura_matriz, mapa = "Brasil", vlat = latitudes, vlon = longitudes, fun="max")
+#' @examples 
+#' \dontrun{
+#' media_area(temperatura_matriz, mapa = "Brasil", vlat = latitudes, vlon = longitudes, fun="max")
 #' media_area(temperatura_matriz, mapa = "/storage/dados/shapes/shape_bacia_SF/bacia_sao_francisco.shp", vlat = latitudes, vlon = longitudes, quantil=0.9)
+#'}
 media_area <- function(matrix,mapa,vlat,vlon,fun="mean",quantil=NA){
   ###############
   # Extrai a media de uma matriz em um shape. Converte p/ raster primeiro

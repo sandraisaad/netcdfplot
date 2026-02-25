@@ -18,6 +18,8 @@ Returns the longitude vector
 Converts from 0-360 to -180 to 180 degrees
 }
 \examples{
-longitudes <- carrega_longitude(gfs,nome_longitude="lon")
-          longitudes <- carrega_longitude(gfs)
+if (interactive()) {
+longitudes <- carrega_longitude(modelo,nome_longitude="lon")
+          longitudes <- carrega_longitude(modelo)
+}
 }

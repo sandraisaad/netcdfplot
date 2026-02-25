@@ -20,5 +20,7 @@ raster
 Converts a matrix to raster in WGS85 longlat
 }
 \examples{
+\dontrun{
 matrix2raster(matriz,vlat,vlon)
+}
 }

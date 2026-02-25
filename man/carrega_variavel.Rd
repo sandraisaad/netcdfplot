@@ -18,5 +18,7 @@ THe variable array
 Load the variable data (e.g. temperature, precipitation) of a netcdf file
 }
 \examples{
-temperatura <- carrega_variavel(gfs,"tmp2m")
+if (interactive()) {
+temperatura <- carrega_variavel(modelo,"tmp2m")
+}
 }

@@ -16,5 +16,6 @@ The loaded netecdf file
 Abre o arquivo com a funcao nc_open do ncdf4
 }
 \examples{
-gfs <- carrega_modelo("/data/gfs_2019092500mod.nc")
+arq <- netcdfplot::gfs_example_file()
+modelo <- netcdfplot::carrega_modelo(arq)
 }

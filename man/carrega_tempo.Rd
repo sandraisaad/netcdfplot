@@ -19,6 +19,8 @@ A date/time vector in POSIXct format
 Returns the date/time vector from a NetCDF file in POSIXct format
 }
 \examples{
+\dontrun{
 carrega_tempo(gfs)
 carrega_tempo(era5,time="valid_time")
+}
 }

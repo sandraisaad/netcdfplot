@@ -64,6 +64,7 @@ Plots wind vectorial field
 }
 \examples{
 
+\dontrun{
 plota_mapa_vento(u10m_t1,v10m_t1,vlon = longitudes, vlat = latitudes)
-
+}
 }

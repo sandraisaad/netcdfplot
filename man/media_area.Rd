@@ -26,6 +26,8 @@ The mean within a shapefile
 Extracts the mean of a matrix within a shapefile
 }
 \examples{
+\dontrun{
 media_area(temperatura_matriz, mapa = "Brasil", vlat = latitudes, vlon = longitudes, fun="max")
 media_area(temperatura_matriz, mapa = "/storage/dados/shapes/shape_bacia_SF/bacia_sao_francisco.shp", vlat = latitudes, vlon = longitudes, quantil=0.9)
+}
 }

@@ -20,15 +20,15 @@
 #' @param legenda_intervalos Se T, mostra a legenda em intervalos
 #' @param contorno Se T, mostra os contornos do plot
 #'
-#' @return
 #' @export
 #'
 #' @examples
 #'
+#' \dontrun{
 #' plota_mapa(prec,titulo = expression(paste("Precipitation (mm yr"^"-1",")")),legenda="Precipitação (mm)", vlon=longitudes,vlat=latitudes,loni=-39,lonf=-36,lati=-7.78,latf=-5, mapa = "PPA", mapa_brasil = T,mapa_amsul = T, paleta_rev = F, paleta = "YlGnBu", legenda_intervalos = F,contorno = F)
 #'
 #' plota_mapa(temperatura,vlon=longitudes,vlat=latitudes)
-#'
+#'}
 plota_mapa <- function(array_var2d,titulo="",legenda="",vlon,vlat,loni=NA,lonf=NA,lati=NA,latf=NA,mapa=NA,paleta="RdBu",paleta_rev=F,
                        mapa_brasil=F,mapa_amsul=F,mapa_mundo=F,intervalos=NA, interpolate=T,legenda_intervalos=F,contorno=F){
 
@@ -111,10 +111,12 @@ plota_mapa <- function(array_var2d,titulo="",legenda="",vlon,vlat,loni=NA,lonf=N
 #' @param height Altura a ser salva
 #' @param salva_svg Se T salva em svg também
 #'
-#' @return
 #' @export
 #'
-#' @examples salva_figura(plt,"figura_temperatura",width=2500,height=2000,salva_svg=F)
+#' @examples 
+#' \dontrun{
+#' salva_figura(plt,"figura_temperatura",width=2500,height=2000,salva_svg=F)
+#' }
 salva_figura<-function(plt,file_name, width=2500,height=2000,salva_svg=F){
   #salva_figura<-function(plt,file_name, width=600,height=500){
   print(plt)
@@ -155,13 +157,13 @@ salva_figura<-function(plt,file_name, width=2500,height=2000,salva_svg=F){
 #' @param legenda_intervalos Se T, mostra a legenda em intervalos
 #' @param skip Pula alguns pontos de grades para nao ficar poluido. Padrao 3
 #'
-#' @return
 #' @export
 #'
 #' @examples
 #'
+#' \dontrun{
 #' plota_mapa_vento(u10m_t1,v10m_t1,vlon = longitudes, vlat = latitudes)
-#'
+#' }
 
 
 plota_mapa_vento <- function(array_u2d,array_v2d,titulo="",legenda="",vlon,vlat,loni=NA,lonf=NA,lati=NA,latf=NA,mapa=NA,

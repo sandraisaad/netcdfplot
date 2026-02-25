@@ -19,5 +19,7 @@ closest to the requested value.
 Converts a latitude value to its corresponding y index (from 1 to the length of the latitude vector).
 }
 \examples{
+\dontrun{
 lat2y(latitudes,-23.5)
+}
 }

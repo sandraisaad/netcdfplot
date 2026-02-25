@@ -21,5 +21,7 @@ salva_figura(plt, file_name, width = 2500, height = 2000, salva_svg = F)
 Plot image and save in jpg and svg (if chosen)
 }
 \examples{
+\dontrun{
 salva_figura(plt,"figura_temperatura",width=2500,height=2000,salva_svg=F)
+}
 }
