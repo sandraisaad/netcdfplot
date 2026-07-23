@@ -1,5 +1,11 @@
 # netcdfplot
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.21511829.svg)](https://doi.org/10.5281/zenodo.21511829)
+
+If you use **netcdfplot** in your research, please cite:
+
+Saad, S. I. (2026). *Netcdfplot: Analysis and Visualization of NetCDF Data in R for Earth System Sciences* (Version 2.0.1). Zenodo. https://doi.org/10.5281/zenodo.21511829
+
 Tools for plotting and analyzing NetCDF geospatial and temporal data in R.
 
 **Author:** Sandra I. Saad\

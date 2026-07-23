@@ -1,0 +1,15 @@
+meta <- utils::packageDescription("netcdfplot")
+
+citHeader("To cite netcdfplot in publications use:")
+
+citEntry(
+  entry  = "Manual",
+  title  = meta$Title,
+  author = personList(
+    person("Sandra Isay", "Saad")
+  ),
+  year   = substr(meta$Date, 1, 4),
+  note   = paste("R package version", meta$Version),
+  doi    = "10.5281/zenodo.21511829",
+  url    = "https://doi.org/10.5281/zenodo.21511829"
+)
