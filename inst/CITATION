@@ -1,15 +1,19 @@
-meta <- utils::packageDescription("netcdfplot")
-
-citHeader("To cite netcdfplot in publications use:")
-
-citEntry(
-  entry  = "Manual",
-  title  = meta$Title,
-  author = personList(
-    person("Sandra Isay", "Saad")
+bibentry(
+  bibtype = "Manual",
+  title = "Netcdfplot: Analysis and Visualization of NetCDF Data in R for Earth System Sciences",
+  author = person(
+    given = "Sandra Isay",
+    family = "Saad"
   ),
-  year   = substr(meta$Date, 1, 4),
-  note   = paste("R package version", meta$Version),
-  doi    = "10.5281/zenodo.21511829",
-  url    = "https://doi.org/10.5281/zenodo.21511829"
+  year = "2026",
+  note = "R package version 2.0.1",
+  doi = "10.5281/zenodo.21511829",
+  url = "https://doi.org/10.5281/zenodo.21511829",
+  textVersion = paste(
+    "Saad SI (2026).",
+    "Netcdfplot: Analysis and Visualization of NetCDF Data in R for Earth System Sciences.",
+    "R package version 2.0.1.",
+    "Zenodo.",
+    "doi:10.5281/zenodo.21511829."
+  )
 )
