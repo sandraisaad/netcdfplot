@@ -1,0 +1,23 @@
+cff-version: 1.2.0
+message: >
+  If you use netcdfplot in your research, please cite the software using
+  the metadata provided in this file.
+title: "Netcdfplot: Analysis and Visualization of NetCDF Data in R for Earth System Sciences"
+type: software
+
+authors:
+  - family-names: Saad
+    given-names: Sandra Isay
+    orcid: "https://orcid.org/0000-0002-4380-3175"
+    affiliation: "Federal University of Rio Grande do Norte"
+
+license: MIT
+
+version: "2.0.1"
+
+date-released: 2026-07-23
+
+doi: "10.5281/zenodo.xxxxx"
+
+repository-code: "https://github.com/sandraisaad/netcdfplot"
+
